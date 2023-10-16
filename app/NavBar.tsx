@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import { usePathname } from "next/navigation";
 import React from "react";
-import {AiFillBug} from "react-icons/ai";
+import { AiFillBug } from "react-icons/ai";
 import classNames from "classnames";
 
 const NavBar = () => {
@@ -16,7 +16,7 @@ const NavBar = () => {
     },
     {
       label: "Issues",
-      href: "/issues",
+      href: "/issues/list",
     },
   ];
 
