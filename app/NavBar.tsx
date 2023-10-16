@@ -8,6 +8,7 @@ import {
   Avatar,
   Text,
 } from "@radix-ui/themes";
+import Skeleton from "@/app/components/Skeleton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -69,7 +70,7 @@ const NavLinks = () => {
 const AuthStatus = () => {
   const { status, data: session } = useSession();
 
-  if (status === "loading") return null;
+  if (status === "loading") return <Skeleton width="3rem" />;
 
   if (status === "unauthenticated")
     return (
