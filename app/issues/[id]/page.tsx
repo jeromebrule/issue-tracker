@@ -30,7 +30,7 @@ const IssueDetailPage = async ({ params }: Props) => {
         <IssueDetails issue={issue} />
       </Box>
       {session && (
-        <Box className="md:col-span-1">
+        <Box>
           <Flex direction="column" gap="4">
             <AssigneeSelect issue={issue} />
             <EditIssueButton issueId={issue.id} />
@@ -44,9 +44,10 @@ const IssueDetailPage = async ({ params }: Props) => {
 
 export async function generateMetadata({ params }: Props) {
   const issue = await fetchUser(parseInt(params.id));
+
   return {
     title: issue?.title,
-    description: "Detail of issue " + issue?.id,
+    description: "Details of issue " + issue?.id,
   };
 }
 
