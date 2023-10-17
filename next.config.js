@@ -1,16 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async header() {
-    return [
-      {
-        source: '/:path*',
-        header: [
-          {
-            key: 'referrer-policy', value: 'no-referrer'
-          }
-        ]
-      }
-    ]
+  async headers() {
+     return [
+        {
+           source: '/:path*',
+           headers: [
+              { key: 'referrer-policy', value: 'no-referrer'}
+           ]
+        }
+     ]
   }
 }
 
