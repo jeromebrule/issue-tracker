@@ -39,6 +39,7 @@ const IssueTable = ({ searchParams, issues }: Props) => {
               )}
             </Table.ColumnHeaderCell>
           ))}
+          <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
