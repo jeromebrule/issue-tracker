@@ -3,7 +3,6 @@ import { Issue, Status } from "@prisma/client";
 import { ArrowUpIcon } from "@radix-ui/react-icons";
 import { Table } from "@radix-ui/themes";
 import NextLink from "next/link";
-import StatusAssignment from "../[id]/StatusAssignment";
 import AssigneeSelect from "../[id]/AssigneeSelect";
 
 export interface IssueQuery {
@@ -39,7 +38,7 @@ const IssueTable = ({ searchParams, issues }: Props) => {
               )}
             </Table.ColumnHeaderCell>
           ))}
-          <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
+          <Table.ColumnHeaderCell>Assigned to</Table.ColumnHeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
