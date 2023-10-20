@@ -1,13 +1,14 @@
 import { IssueStatusBadge, Link } from "@/app/components";
 import { Issue, Status } from "@prisma/client";
-import { ArrowUpIcon } from "@radix-ui/react-icons";
 import { Table } from "@radix-ui/themes";
 import NextLink from "next/link";
+import SortArrow from "../_components/SortArrow";
 
 export interface IssueQuery {
   status: Status;
   orderBy: keyof Issue;
   page: string;
+  sort: "asc" | "desc";
 }
 
 interface Props {
@@ -27,13 +28,17 @@ const IssueTable = ({ searchParams, issues }: Props) => {
             >
               <NextLink
                 href={{
-                  query: { ...searchParams, orderBy: column.value },
+                  query: {
+                    ...searchParams,
+                    orderBy: column.value,
+                    sort: searchParams.sort === "desc" ? "asc" : "desc",
+                  },
                 }}
               >
                 {column.label}
               </NextLink>
               {column.value === searchParams.orderBy && (
-                <ArrowUpIcon className="inline" />
+                <SortArrow sort={searchParams.sort} />
               )}
             </Table.ColumnHeaderCell>
           ))}
