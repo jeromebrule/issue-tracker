@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "start:dev": "next dev --watch",
+    "migrate:dev": "prisma migrate dev --name init && npm run dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -27,7 +30,7 @@
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.4",
     "next": "13.5.4",
-    "next-auth": "^4.23.2",
+    "next-auth": "^4.24.3",
     "postcss": "8.4.31",
     "prisma": "^5.3.1",
     "react": "18.2.0",
