@@ -8,7 +8,7 @@ import {
   Avatar,
   Text,
 } from "@radix-ui/themes";
-import { Skeleton } from "@/app/components";
+import Skeleton from "@/app/components/Skeleton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
